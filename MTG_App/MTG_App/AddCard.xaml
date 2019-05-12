@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MTG_App.AddCard"
+             xmlns:local="clr-namespace:MTG_App"
+             x:Name="MyPage"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="library" Icon="baseline_book_black_18dp.png" Text="lib." Clicked="OpenLib"></ToolbarItem>
+        <ToolbarItem Name="add" Icon="baseline_note_add_black_18dp.png" Text="add" Clicked="AddACard"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Entry x:Name="searchField" BackgroundColor="DarkGray"></Entry>
+            <Button Text="Search" TextColor="Orange" BackgroundColor="DarkBlue" Clicked="SearchForCards"></Button>
+            <Label x:Name="searching" TextColor="Orange" HorizontalTextAlignment="Center"></Label>
+            <ListView x:Name="searchResults" ItemsSource="{Binding .}" RowHeight="170" ItemTapped="WriteToDB">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:MTGCard">
+                        <ViewCell>
+                            
+                            <Image Source="{Binding imageURL}"></Image>
+                                <!--<Label Text="{Binding name}"></Label>>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
+
+
+
+<!---->   

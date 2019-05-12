@@ -1,0 +1,1 @@
+C:\Users\Lucas Nolting\source\repos\MTG_App\MTG_App\MTG_App.UWP\MTG_App.UWP.csproj;x86

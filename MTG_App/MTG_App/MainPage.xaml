@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MTG_App"
+             x:Class="MTG_App.MainPage">
+
+    <ContentPage.ToolbarItems> 
+        <ToolbarItem Icon="baseline_book_black_18dp.png" Text="lib." Clicked="OpenLib"></ToolbarItem>
+        <ToolbarItem Icon="baseline_note_add_black_18dp.png" Text="add" Clicked="AddCard"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout BackgroundColor="Black">
+        <!-- Place new controls here -->
+
+        <Label Text="My Library" TextColor="Orange" XAlign="Center"></Label>
+        <Button Text="Toggle Card Names (For ScreenReader)" Clicked="ToggleCardNames" 
+                TextColor="Orange" Scale=".5" BackgroundColor="DarkBlue"></Button>
+        <Label x:Name="emptyLibrary" HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"  TextColor="Orange"/>
+        <ListView x:Name="searchResults" ItemsSource="{Binding .}" RowHeight="170" ItemTapped="SetTappedCardAndReturnView" >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:MTGCard">
+                    <ViewCell>
+                        <StackLayout>
+                            <Image Source="{Binding imageURL}" Margin=".25"></Image>
+                            <Label Text="{Binding name}" TextColor="Orange" XAlign="Center" Scale=".5" Margin=".25"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

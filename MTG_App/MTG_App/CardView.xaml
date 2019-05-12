@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MTG_App.CardView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="library" Icon="baseline_book_black_18dp.png" Text="lib." Clicked="OpenLib"></ToolbarItem>
+        <ToolbarItem Name="add" Icon="baseline_note_add_black_18dp.png" Text="add" Clicked="AddCard"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <ImageButton BackgroundColor="Black" x:Name="viewCard" Source="{Binding imageURL}" Clicked="BackToMain"></ImageButton>
+            <Button  x:Name="DeleteCard" Text="Remove" Clicked="RemoveCard" TextColor="Orange" BackgroundColor="DarkBlue" Scale=".50"></Button>
+            <Label Text="*You can click the card to go back" Scale=".5" TextColor="Orange"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
